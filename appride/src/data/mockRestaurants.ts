@@ -1,0 +1,262 @@
+import type { FoodCategoryId, Restaurant } from '../types/food';
+
+export const FOOD_CATEGORY_LABELS: Record<FoodCategoryId, string> = {
+  all: 'All',
+  burgers: 'Burgers',
+  asian: 'Asian',
+  healthy: 'Healthy',
+  dessert: 'Dessert',
+  drinks: 'Drinks',
+  pizza: 'Pizza',
+  shawarma: 'Shawarma',
+  rice: 'Rice bowls',
+  pasta: 'Pasta',
+  fast_food: 'Fast food',
+  local: 'Local favorites',
+  street: 'Street food',
+};
+
+const BASE: Restaurant[] = [
+  {
+    id: 'r-golden-bun',
+    name: 'Golden Bun Lab',
+    tagline: 'Smash burgers · truffle fries',
+    rating: 4.9,
+    etaMin: 22,
+    deliveryFee: 2.49,
+    categories: ['burgers', 'drinks'],
+    heroEmoji: '🍔',
+    menu: [
+      {
+        id: 'm-gb-1',
+        name: 'Aurora Smash',
+        description: 'Double patty, aged cheddar, caramelized onion, brioche.',
+        price: 14.5,
+        category: 'burgers',
+        imageEmoji: '🍔',
+      },
+      {
+        id: 'm-gb-2',
+        name: 'Midnight Truffle Fries',
+        description: 'Crisp fries, black garlic aioli, parmesan snow.',
+        price: 8.25,
+        category: 'burgers',
+        imageEmoji: '🍟',
+      },
+      {
+        id: 'm-gb-3',
+        name: 'Yuzu Fizz',
+        description: 'Sparkling yuzu, mint, crushed ice.',
+        price: 4.5,
+        category: 'drinks',
+        imageEmoji: '🥤',
+      },
+    ],
+  },
+  {
+    id: 'r-neon-wok',
+    name: 'Neon Wok Society',
+    tagline: 'Fire-kissed noodles · low ABV pairings',
+    rating: 4.8,
+    etaMin: 28,
+    deliveryFee: 1.99,
+    categories: ['asian', 'healthy'],
+    heroEmoji: '🍜',
+    menu: [
+      {
+        id: 'm-nw-1',
+        name: 'Char Siu Udon',
+        description: 'Smoked pork belly, soy egg, scallion oil.',
+        price: 16.0,
+        category: 'asian',
+        imageEmoji: '🍜',
+      },
+      {
+        id: 'm-nw-2',
+        name: 'Emerald Bowl',
+        description: 'Miso kale, seared tofu, quinoa, sesame crunch.',
+        price: 13.25,
+        category: 'healthy',
+        imageEmoji: '🥗',
+      },
+    ],
+  },
+  {
+    id: 'r-velvet-spoon',
+    name: 'Velvet Spoon',
+    tagline: 'Dessert atelier · late night',
+    rating: 4.95,
+    etaMin: 18,
+    deliveryFee: 3.25,
+    categories: ['dessert', 'drinks'],
+    heroEmoji: '🍰',
+    menu: [
+      {
+        id: 'm-vs-1',
+        name: 'Midnight Basque',
+        description: 'Burnt cheesecake, sea salt, gold leaf.',
+        price: 11.0,
+        category: 'dessert',
+        imageEmoji: '🍰',
+      },
+      {
+        id: 'm-vs-2',
+        name: 'Cold Brew Caramel',
+        description: 'Slow drip, vanilla smoke, oat foam.',
+        price: 5.75,
+        category: 'drinks',
+        imageEmoji: '☕',
+      },
+    ],
+  },
+];
+
+/** Expanded marketplace venues (new plan — more categories & realistic pricing). */
+const EXTENDED: Restaurant[] = [
+  {
+    id: 'r-lagos-pizza',
+    name: 'Lagos Fire Pizza',
+    tagline: 'Wood-fired · sourdough crust',
+    rating: 4.7,
+    etaMin: 26,
+    deliveryFee: 2.2,
+    categories: ['pizza', 'fast_food'],
+    heroEmoji: '🍕',
+    imageUrl: 'https://picsum.photos/seed/ultrago-pizza/720/420',
+    menu: [
+      {
+        id: 'm-lp-1',
+        name: 'Peppered Supreme',
+        description: 'Beef suya crumble, peppers, mozzarella, honey drizzle.',
+        price: 18.5,
+        category: 'pizza',
+        imageEmoji: '🍕',
+        imageUrl: 'https://picsum.photos/seed/ultrago-p1/200/200',
+      },
+      {
+        id: 'm-lp-2',
+        name: 'Truffle Margherita',
+        description: 'San Marzano, burrata, basil oil.',
+        price: 16.0,
+        category: 'pizza',
+        imageEmoji: '🍕',
+      },
+    ],
+  },
+  {
+    id: 'r-shawarma-king',
+    name: 'Shawarma King Express',
+    tagline: 'Charcoal spit · garlic whip',
+    rating: 4.85,
+    etaMin: 15,
+    deliveryFee: 1.49,
+    categories: ['shawarma', 'street', 'fast_food'],
+    heroEmoji: '🌯',
+    imageUrl: 'https://picsum.photos/seed/ultrago-shaw/720/420',
+    menu: [
+      {
+        id: 'm-sk-1',
+        name: 'Royal Mix Wrap',
+        description: 'Chicken + lamb, pickles, toum, saj bread.',
+        price: 9.99,
+        category: 'shawarma',
+        imageEmoji: '🌯',
+      },
+      {
+        id: 'm-sk-2',
+        name: 'Spicy Fries Box',
+        description: 'Sumac fries, harissa mayo.',
+        price: 5.25,
+        category: 'fast_food',
+        imageEmoji: '🍟',
+      },
+    ],
+  },
+  {
+    id: 'r-jollof-house',
+    name: 'Jollof House',
+    tagline: 'Smoky party rice · grilled protein',
+    rating: 4.9,
+    etaMin: 32,
+    deliveryFee: 2.75,
+    categories: ['rice', 'local'],
+    heroEmoji: '🍚',
+    imageUrl: 'https://picsum.photos/seed/ultrago-rice/720/420',
+    menu: [
+      {
+        id: 'm-jh-1',
+        name: 'Coal Jollof + Chicken',
+        description: 'Charred tomato base, plantain, grilled thigh.',
+        price: 15.5,
+        category: 'rice',
+        imageEmoji: '🍗',
+      },
+      {
+        id: 'm-jh-2',
+        name: 'Seafood Okra Bowl',
+        description: 'Prawns, crab claw, locust beans, fufu side.',
+        price: 19.25,
+        category: 'local',
+        imageEmoji: '🦐',
+      },
+    ],
+  },
+  {
+    id: 'r-pasta-lab',
+    name: 'Copper Pasta Lab',
+    tagline: 'Bronze die cuts · 90-second sauces',
+    rating: 4.65,
+    etaMin: 24,
+    deliveryFee: 2.99,
+    categories: ['pasta', 'healthy'],
+    heroEmoji: '🍝',
+    imageUrl: 'https://picsum.photos/seed/ultrago-pasta/720/420',
+    menu: [
+      {
+        id: 'm-pl-1',
+        name: 'Aglio Thunder',
+        description: 'Spaghetti, garlic confit, Calabrian chili, pangrattato.',
+        price: 14.0,
+        category: 'pasta',
+        imageEmoji: '🍝',
+      },
+      {
+        id: 'm-pl-2',
+        name: 'Green Goddess Rotini',
+        description: 'Pea pesto, lemon ricotta, toasted seeds.',
+        price: 13.5,
+        category: 'healthy',
+        imageEmoji: '🥦',
+      },
+    ],
+  },
+  {
+    id: 'r-suya-street',
+    name: 'Suya Street Co.',
+    tagline: 'Open flame · Yaji dust',
+    rating: 4.75,
+    etaMin: 12,
+    deliveryFee: 1.25,
+    categories: ['street', 'local', 'fast_food'],
+    heroEmoji: '🔥',
+    imageUrl: 'https://picsum.photos/seed/ultrago-suya/720/420',
+    menu: [
+      {
+        id: 'm-ss-1',
+        name: 'Beef Suya Skewers (6)',
+        description: 'Yaji rub, onions, charred lime.',
+        price: 11.0,
+        category: 'street',
+        imageEmoji: '🍢',
+      },
+    ],
+  },
+];
+
+export const MOCK_RESTAURANTS: Restaurant[] = [...BASE, ...EXTENDED];
+
+export const ALL_RESTAURANTS: Restaurant[] = MOCK_RESTAURANTS;
+
+export function getRestaurantById(id: string): Restaurant | undefined {
+  return ALL_RESTAURANTS.find((r) => r.id === id);
+}

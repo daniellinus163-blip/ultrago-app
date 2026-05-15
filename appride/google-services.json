@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570074894785",
+    "project_id": "my-uberapp-ride",
+    "storage_bucket": "my-uberapp-ride.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570074894785:android:17023c04d9736fd7179f40",
+        "android_client_info": {
+          "package_name": "com.uberride.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSkjAqyJvZLjb8I7WFX9Hu5cIIQgc0UXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

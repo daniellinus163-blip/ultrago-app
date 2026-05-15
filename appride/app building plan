@@ -1,0 +1,387 @@
+PHASE 2 — HOME & MAP EXPERIENCE==================================================Goal:Build the core ride-booking experience.Tasks:1. Build Home Screen2. Integrate Google Maps3. Show live user location4. Add animated map markers5. Add destination search bar6. Add Google Places autocomplete7. Create ride type cards:   - Economy   - Premium   - Bike   - Delivery8. Add nearby drivers section9. Add animated bottom sheet10. Add premium navigation UIRequirements:- Smooth map interactions- Floating UI animations- Glassmorphism cards- Realtime-ready architectureAFTER PHASE 2 IS COMPLETE:STOP.WAIT FOR NEXT INSTRUCTION.==================================================PHASE 3 — RIDE BOOKING FLOW==================================================Goal:Build the complete booking flow.Tasks:1. Destination selection2. Price estimation3. Driver searching screen4. Driver found screen5. Live driver tracking6. ETA calculations7. Ride confirmation8. Ride completion screen9. Rating system10. Ride historyRequirements:- Realistic booking flow- Premium animations- Realtime updates structure- Clean state managementAFTER PHASE 3 IS COMPLETE:STOP.==================================================PHASE 4 — FOOD DELIVERY SYSTEM==================================================Goal:Add food ordering capability.Tasks:1. Restaurants screen2. Restaurant details3. Food item details4. Cart system5. Checkout screen6. Order tracking7. Delivery progress UI8. Food categories9. Search and filtering10. Favorites systemRequirements:- Modern food UI- Smooth transitions- Responsive cards- Optimized performanceAFTER PHASE 4 IS COMPLETE:STOP.==================================================PHASE 5 — PAYMENTS & WALLET==================================================Goal:Build payment infrastructure.Tasks:1. Wallet screen2. Payment methods3. Card management4. Ride payments5. Food payments6. Transaction history7. Promo codes8. Discounts9. Referral systemRequirements:- Secure architecture- Premium financial UI- Clean transaction flowsAFTER PHASE 5 IS COMPLETE:STOP.==================================================PHASE 6 — PROFILE, SETTINGS & SUPPORT==================================================Goal:Complete user management system.Tasks:1. Profile screen2. Edit profile3. App settings4. Notifications settings5. Saved places6. Favorites7. Help & support8. Contact support9. FAQ system10. Logout systemRequirements:- Elegant profile UI- Organized settings structure- Smooth transitionsAFTER PHASE 6 IS COMPLETE:STOP.==================================================PHASE 7 — REALTIME & ADVANCED FEATURES==================================================Goal:Add advanced production-level systems.Tasks:1. Realtime driver updates2. Push notifications3. Live ride status4. SOS emergency feature5. In-app chat6. Voice search7. Ride scheduling8. Loyalty rewards9. AI recommendations10. Dynamic pricing architectureRequirements:- Scalable realtime architecture- Optimized performance- Production-grade implementationAFTER PHASE 7 IS COMPLETE:STOP.==================================================PHASE 8 — FINAL POLISH & OPTIMIZATION==================================================Goal:Prepare app for production release.Tasks:1. Optimize performance2. Improve animations3. Add skeleton loaders4. Add offline handling5. Add error boundaries6. Improve accessibility7. Optimize images/assets8. Test responsiveness9. Final UI polish10. Prepare production buildRequirements:- App should feel premium and cinematic- Maintain smooth 60fps animations- Clean production architecture- Billion-dollar startup qualityAFTER PHASE 8 IS COMPLETE:STOP COMPLETELY.
+Update the Uvexa app design system with a strong yellow-first visual identity.
+
+IMPORTANT:
+Yellow must be the dominant color across the entire app.
+
+Design Rules:
+- Most screens should use premium yellow backgrounds or yellow-dominant layouts.
+- Black should ONLY act as a supporting contrast color.
+- The app should feel bold, luxurious, energetic, modern, and highly branded.
+
+Primary Background Colors:
+Use premium rich yellows such as:
+- #FFD60A
+- #FACC15
+- #EAB308
+
+The yellow should feel smooth and premium — not cheap, cartoonish, or oversaturated.
+
+Supporting Colors:
+Use black and dark tones ONLY for:
+- text contrast
+- cards
+- icons
+- buttons
+- navigation
+- overlays
+- shadows
+
+Examples:
+- Black cards on yellow screens
+- Yellow glowing buttons
+- Dark navigation bars
+- Black typography on bright yellow sections
+
+Map Screen Exception:
+- Keep map screens darker and cleaner for readability.
+- Yellow should appear through:
+  - active buttons
+  - route highlights
+  - driver indicators
+  - floating UI components
+
+Visual Style:
+- Premium startup aesthetic
+- Futuristic but clean
+- Smooth rounded corners
+- Soft shadows
+- Glassmorphism where appropriate
+- High-end mobile app feel
+
+Animations:
+- Smooth transitions
+- Floating UI effects
+- Soft glow animations
+- Premium button interactions
+
+UI Goal:
+The app should instantly feel recognizable because of the strong yellow branding while still maintaining elegance and readability.
+
+The overall vibe should feel like:
+- Uber simplicity
+- McLaren energy
+- Luxury fintech polish
+- Modern electric vehicle branding
+
+Avoid:
+- childish yellow
+- flat design
+- excessive gradients
+- messy color combinations
+- low-contrast readability problems
+
+UPDATED IMPLEMENTATION PLAN FOR UVEXA — PAYMENT FLOW, ROLE SYSTEM, FOOD SYSTEM, DRIVER SYSTEM, AND WALLET LOGIC
+
+IMPORTANT GLOBAL RULES:
+- Build in phases only.
+- After completing ONE phase, STOP completely.
+- Wait for further instruction before continuing.
+- Do NOT create fake demo logic.
+- All systems must be structured for REAL backend functionality using Firebase.
+- Prepare all payment systems as real-ready architecture, but DO NOT fully integrate actual payment APIs yet.
+- Build all UI and backend structure so real payment integration can later be connected manually.
+
+==================================================
+PHASE 1 — ROLE-BASED AUTHENTICATION SYSTEM
+==================================================
+
+Goal:
+Create a real authentication and role selection system.
+
+Tasks:
+1. Build authentication flow:
+   - Login
+   - Signup
+   - Forgot password
+   - Google sign in
+   - Persistent login
+
+2. During signup:
+   User MUST choose role:
+   - Customer
+   - Driver
+   - Delivery Rider
+
+3. Store all role information in Firebase.
+
+4. Create role-specific user profile structure.
+
+5. During registration:
+   collect:
+   - full name
+   - phone number
+   - email
+   - profile image
+   - live location
+   - role type
+
+6. Save all user information to Firebase Firestore.
+
+7. Build role-based navigation:
+   - Customers see customer app flow
+   - Drivers see driver app flow
+   - Delivery riders see delivery app flow
+
+IMPORTANT:
+This data must be REAL Firebase data.
+Do NOT use static demo users.
+
+AFTER PHASE 1:
+STOP.
+
+==================================================
+PHASE 2 — CUSTOMER WALLET & PAYMENT METHOD SYSTEM
+==================================================
+
+Goal:
+Build customer payment setup flow.
+
+Tasks:
+1. Create customer wallet screen.
+
+2. Customer wallet screen should ONLY contain:
+   - saved payment methods
+   - add payment method button
+
+3. Add screen for:
+   - adding debit card
+   - bank account
+   - future payment integrations
+
+4. Build architecture for:
+   - Stripe
+   - Paystack
+   - Flutterwave
+   integration later.
+
+5. IMPORTANT:
+Do NOT implement fake payments.
+Only prepare:
+   - UI
+   - backend structure
+   - Firestore models
+   - secure payment flow architecture
+
+6. Customer MUST add payment method BEFORE:
+   - requesting ride
+   - requesting food delivery
+
+7. If no payment method exists:
+   block request and prompt:
+   "Add payment method first"
+
+AFTER PHASE 2:
+STOP.
+
+==================================================
+PHASE 3 — DRIVER & DELIVERY RIDER WALLET SYSTEM
+==================================================
+
+Goal:
+Build earnings wallet for drivers and riders.
+
+Tasks:
+1. Driver and delivery rider wallet screens must be DIFFERENT from customer wallet.
+
+2. Driver/rider wallet screen should show:
+   - current balance
+   - completed deliveries
+   - completed rides
+   - withdrawal button
+
+3. Earnings should ONLY increase AFTER:
+   - customer payment succeeds
+   - ride or delivery is marked completed
+   - customer confirms delivery completion
+
+4. Build Firebase transaction system.
+
+5. Add withdrawal button.
+
+6. When withdrawal button is clicked:
+   navigate to:
+   - add bank account
+   - add payout method
+
+7. IMPORTANT:
+Do NOT create fake payment transfers.
+Only build:
+   - real-ready architecture
+   - database structure
+   - payout flow UI
+
+8. Prepare backend structure for future payout integrations.
+
+AFTER PHASE 3:
+STOP.
+
+==================================================
+PHASE 4 — REAL DRIVER & DELIVERY MATCHING SYSTEM
+==================================================
+
+Goal:
+Create real user matching system.
+
+Tasks:
+1. Customers must ONLY see REAL drivers/riders from Firebase.
+
+2. Drivers/riders shown must be:
+   - authenticated users
+   - users registered as driver/rider
+   - online users only
+
+3. Customer should be able to view:
+   - driver image
+   - driver name
+   - phone number
+   - live location
+   - vehicle info
+   - rating
+
+4. Build realtime nearby-driver system using Firebase.
+
+5. Nearby requests should ONLY go to nearby drivers/riders.
+
+6. Build request acceptance flow:
+   - customer sends request
+   - nearby driver gets notification
+   - driver accepts request
+   - ride begins
+
+7. Use Firebase realtime listeners.
+
+IMPORTANT:
+No mock drivers.
+No static data.
+Everything must come from Firebase users.
+
+AFTER PHASE 4:
+STOP.
+
+==================================================
+PHASE 5 — REQUEST, NOTIFICATION & DELIVERY FLOW
+==================================================
+
+Goal:
+Build full ride and delivery request system.
+
+Tasks:
+1. Customer must:
+   - choose payment method first
+   - then send request
+
+2. Build ride request flow.
+
+3. Build food delivery request flow.
+
+4. Nearby drivers/riders should receive realtime notifications.
+
+5. Notifications should contain:
+   - customer location
+   - order type
+   - estimated earnings
+   - accept/reject buttons
+
+6. After driver accepts:
+   customer should see:
+   - live tracking
+   - driver details
+   - estimated arrival
+
+7. Build delivery completion confirmation.
+
+8. ONLY after successful completion:
+   transfer earnings into rider wallet balance.
+
+IMPORTANT:
+Structure everything for real production logic.
+
+AFTER PHASE 5:
+STOP.
+
+==================================================
+PHASE 6 — FOOD DELIVERY SYSTEM
+==================================================
+
+Goal:
+Build food ordering system using local assets.
+
+IMPORTANT:
+Food images already exist inside the assets folder.
+Use those assets directly.
+
+Tasks:
+1. Build food homepage.
+
+2. Create ONLY 3 food categories:
+   - Junk Food
+   - Nourishing Food
+   - Desserts
+
+3. Structure:
+   - 15 junk food items
+   - 15 nourishing food items
+   - 5 dessert items
+
+4. Cursor should:
+   - automatically generate names for foods
+   - generate short food descriptions
+   - create pricing placeholders
+
+5. Build:
+   - food cards
+   - food details screen
+   - cart system
+   - checkout screen
+
+6. Customer MUST:
+   - add payment method first
+   - then checkout
+
+7. Use local image assets from:
+   assets/
+
+8. Build dynamic rendering system:
+   so new food images can easily be added later.
+
+9. Build modern premium food UI:
+   - large food cards
+   - smooth animations
+   - yellow branding
+   - dark supporting cards
+
+IMPORTANT:
+Do NOT use online demo food images.
+Use ONLY local assets already provided.
+
+AFTER PHASE 6:
+STOP.
+
+==================================================
+PHASE 7 — FINAL REALTIME PRODUCTION SYSTEMS
+==================================================
+
+Goal:
+Finalize production architecture.
+
+Tasks:
+1. Realtime location updates
+2. Push notifications
+3. Driver online/offline status
+4. Ride history
+5. Delivery history
+6. Firebase security rules
+7. Scalable Firestore collections
+8. Error handling
+9. Loading states
+10. Production optimization
+
+Requirements:
+- No fake data
+- Realtime Firebase architecture
+- Clean scalable codebase
+- Production-ready structure
+
+AFTER PHASE 7:
+STOP COMPLETELY.

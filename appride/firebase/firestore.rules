@@ -1,0 +1,100 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(userId);
+      allow delete: if false;
+    }
+
+    match /drivers/{driverId} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(driverId);
+      allow delete: if false;
+    }
+
+    match /deliveryRiders/{riderId} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(riderId);
+      allow delete: if false;
+    }
+
+    match /rides/{rideId} {
+      allow read: if signedIn() && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid
+      );
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update: if signedIn() && (
+        resource.data.userId == request.auth.uid ||
+        resource.data.driverId == request.auth.uid ||
+        (resource.data.driverId == null && request.resource.data.driverId == request.auth.uid)
+      );
+      allow delete: if false;
+
+      match /messages/{messageId} {
+        allow read, create: if signedIn();
+        allow update, delete: if false;
+      }
+    }
+
+    match /foodOrders/{orderId} {
+      allow read: if signedIn() && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.deliveryRiderId == request.auth.uid
+      );
+      allow create: if signedIn() && request.resource.data.customerId == request.auth.uid;
+      allow update: if signedIn() && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.deliveryRiderId == request.auth.uid ||
+        (resource.data.deliveryRiderId == null && request.resource.data.deliveryRiderId == request.auth.uid)
+      );
+      allow delete: if false;
+    }
+
+    match /paymentMethods/{methodId} {
+      allow read, update, delete: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+    }
+
+    match /partnerWalletTx/{txId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if signedIn() && resource.data.uid == request.auth.uid;
+      allow delete: if false;
+    }
+
+    match /partnerPayoutMethods/{methodId} {
+      allow read, update, delete: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+    }
+
+    match /partnerRequestNotifications/{notificationId} {
+      allow read, update: if signedIn() && resource.data.partnerUid == request.auth.uid;
+      allow create: if signedIn();
+      allow delete: if false;
+    }
+
+    match /paymentRecords/{recordId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /foodRestaurants/{restaurantId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /locations/{locationId} {
+      allow read, write: if signedIn();
+    }
+  }
+}
