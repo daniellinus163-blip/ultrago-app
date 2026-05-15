@@ -1,0 +1,11 @@
+# UltraGo — deploy the Paystack API server (appride/), not the Expo mobile app.
+# The React Native app runs on phones via Expo Go / EAS builds.
+
+[build]
+buildCommand = "npm run install:app"
+
+[deploy]
+startCommand = "npm --prefix appride run server"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"

@@ -31,5 +31,5 @@ if (!process.env.PAYSTACK_SECRET_KEY?.trim()) {
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Paystack server listening on http://0.0.0.0:${port}`);
-  console.log(`Verify endpoint: http://<your-lan-ip>:${port}/api/verify-charge`);
+  console.log(`Health: /api/health · Verify: /api/verify-charge`);
 });

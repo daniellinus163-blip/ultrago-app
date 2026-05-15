@@ -4,7 +4,8 @@
   "description": "Expo app is in ./appride. First run: npm run install:app (then npm start). Root npm install no longer chains into appride — avoids Windows copyfile errors during postinstall.",
   "scripts": {
     "install:app": "npm install --prefix appride",
-    "start": "npm --prefix appride start",
+    "start": "npm --prefix appride run server",
+    "start:expo": "npm --prefix appride start",
     "start:clear": "npm --prefix appride run start:clear",
     "android": "npm --prefix appride run android",
     "run:android": "npm --prefix appride run run:android",
