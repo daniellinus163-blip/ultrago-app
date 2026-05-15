@@ -1,0 +1,4 @@
+node_modules
+.env
+appride/node_modules
+appride/.expo

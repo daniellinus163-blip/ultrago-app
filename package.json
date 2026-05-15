@@ -1,0 +1,24 @@
+{
+  "name": "uber-appride-website",
+  "private": true,
+  "description": "Expo app is in ./appride. First run: npm run install:app (then npm start). Root npm install no longer chains into appride — avoids Windows copyfile errors during postinstall.",
+  "scripts": {
+    "install:app": "npm install --prefix appride",
+    "start": "npm --prefix appride start",
+    "start:clear": "npm --prefix appride run start:clear",
+    "android": "npm --prefix appride run android",
+    "run:android": "npm --prefix appride run run:android",
+    "setup:android-env": "npm --prefix appride run setup:android-env",
+    "setup:jdk-env": "npm --prefix appride run setup:jdk-env",
+    "ios": "npm --prefix appride run ios",
+    "web": "npm --prefix appride run web",
+    "typecheck": "npm --prefix appride run typecheck",
+    "expo": "npm exec --prefix appride -- expo",
+    "eas": "cd appride && npx eas"
+  },
+  "dependencies": {
+    "axios": "^1.16.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
